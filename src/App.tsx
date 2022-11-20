@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {MouseEvent} from 'react';
 import './App.css';
+import {Button} from "./Components/Button";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Button1Foo=(name:string,age:number)=>{
+    console.log(name,age)
+}
+    const Button2Foo=(name:string, address:string)=>{
+        console.log(name,address)
+    }
+const Button3Foo=()=>{
+    console.log("Im stupid Button")
+}
+    return (
+    <div >
+        <Button name={"chanel-1"} callback={()=>Button1Foo("Im freddy", 21)}/>
+        <Button name={"chanel-2"} callback={()=>Button2Foo("Im teddy","live in Minsk")}/>
+        <Button name={"Stupid Button"} callback={Button3Foo}/>
+
     </div>
   );
 }
